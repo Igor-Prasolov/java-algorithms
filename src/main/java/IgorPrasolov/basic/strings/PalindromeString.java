@@ -6,14 +6,19 @@ public class PalindromeString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine().toLowerCase();
-        boolean bool = false;
+        boolean isPalindrome = true;
+        int left = 0;
+        int right = s.length() -1;
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i).) {
-                bool = true;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                isPalindrome = false;
+                break;
             }
+            left++;
+            right--;
         }
-        System.out.println(bool);
+        System.out.println(isPalindrome);
     }
 
 }
