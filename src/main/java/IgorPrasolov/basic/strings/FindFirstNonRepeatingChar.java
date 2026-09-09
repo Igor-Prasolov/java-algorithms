@@ -2,24 +2,24 @@ package IgorPrasolov.basic.strings;
 
 import java.util.Scanner;
 
-public class RemoveDuplicateChars {
+public class FindFirstNonRepeatingChar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine().toLowerCase();
         char[] arr = s.toCharArray();
-        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < arr.length; i++) {
-            int currentCountChar = 0;
-            for (int j = 0; j < i; j++) {
+            int currentCount = 0;
+            for (int j = 0; j < arr.length; j++) {
                 if (arr[j] == arr[i]) {
-                    currentCountChar++;
+                    currentCount++;
                 }
             }
-            if (currentCountChar == 0) {
-                sb.append(arr[i]);
+            if (currentCount == 1) {
+                System.out.println(arr[i]);
+                return;
             }
         }
-        System.out.println(sb);
+        System.out.println(-1);
     }
 }
