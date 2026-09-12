@@ -2,23 +2,20 @@ package IgorPrasolov.basic.strings;
 
 import java.util.Scanner;
 
-public class RemoveCharAtIndex {
+public class ShiftArrayRight {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine().toLowerCase();
         int num = scanner.nextInt();
         char[] arr = s.toCharArray();
-        char[] arr2 = new char[arr.length - 1];
-        int count = 0;
+        char[] arrRes = new char[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
-            if (i != num) {
-                arr2[count] = arr[i];
-                count++;
-            }
-
+            int newRes = (i + num) % arr.length;
+            arrRes[newRes] = arr[i];
         }
-        System.out.println(arr2);
+
+        System.out.println(arrRes);
 
     }
 }
